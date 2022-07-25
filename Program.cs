@@ -61,3 +61,23 @@
 // int num = Convert.ToInt32(Console.ReadLine());
 // Console.WriteLine(num % 10);
 
+// Задача 2: Напишите программу, которая на вход принимает два числа и выдает, какое больше, а капкое меньше.
+
+Console.Write("Enter first number: ");
+int num1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter second number: ");
+int num2 = Convert.ToInt32(Console.ReadLine());
+
+if (num1 == num2) {
+    Console.WriteLine("It's a joke? they a equal!");
+  }
+
+if (num1>num2) {
+Console.WriteLine(num1 + " bigger!");
+Console.WriteLine(num2 + " smaller!");
+}
+if (num2>num1) {
+Console.WriteLine(num2 + " bigger!");
+Console.WriteLine(num1 + " smaller!");
+}
+
