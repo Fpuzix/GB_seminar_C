@@ -83,27 +83,44 @@
 
 // Задача 4: Напишите программу, которая принимает на вход три числа и выдает максимальное из этих чисел.
 
-Console.Write("Enter first number: ");
-int num1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter second number: ");
-int num2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter third number: ");
-int num3 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter first number: ");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter second number: ");
+// int num2 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter third number: ");
+// int num3 = Convert.ToInt32(Console.ReadLine());
 
-int maximum;
-maximum = num1;
+// int maximum;
+// maximum = num1;
 
-if (num1==num2||num2==num3||num1==num3){
-    Console.WriteLine("Need different numbers!");
+// if (num1==num2||num2==num3||num1==num3){
+//     Console.WriteLine("Need different numbers!");
+// }
+// else {
+// if (num2 > maximum){
+//     maximum = num2;
+// }
+
+// if (num3 > maximum){
+//     maximum = num3;
+// }
+
+// Console.WriteLine( maximum + " bigger than others");
+// }
+
+
+// Задача 6: Напишите программу, которая на вход принимает число и выдает, является ли число четным (делится ли оно на два без остатка).
+
+
+Console.Write("input number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+if (num%2!=0) {
+    Console.WriteLine( num + " is odd");
 }
+
 else {
-if (num2 > maximum){
-    maximum = num2;
+    Console.WriteLine( num + " is even");
 }
 
-if (num3 > maximum){
-    maximum = num3;
-}
 
-Console.WriteLine( maximum + " bigger than others");
-}
