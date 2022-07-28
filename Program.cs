@@ -203,6 +203,20 @@
 
 // Задача № 16. Напишите программу, которая принимает на вход два числа и проверяет, является ли одно число квадратом другого.
 
+void multiNum(int a , int b){
+    if(a == b * b || b == a * a){
+Console.WriteLine (" yeees!!! ");
+    }
+    else{
+        Console.WriteLine(" nooou(( ");
+    }
 
+}
 
+Console.Write("input first number: ");
+int num1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("input second number: ");
+int num2 = Convert.ToInt32(Console.ReadLine());
+
+multiNum(num1, num2);
 
