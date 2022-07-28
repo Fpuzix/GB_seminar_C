@@ -112,15 +112,28 @@
 // Задача 6: Напишите программу, которая на вход принимает число и выдает, является ли число четным (делится ли оно на два без остатка).
 
 
-Console.Write("input number: ");
+// Console.Write("input number: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+
+// if (num%2!=0) {
+//     Console.WriteLine( num + " is odd");
+// }
+
+// else {
+//     Console.WriteLine( num + " is even");
+// }
+
+
+// Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все четные числа от 1 до N.
+
+Console.Write("input number N: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-if (num%2!=0) {
-    Console.WriteLine( num + " is odd");
-}
+int sum;
+sum=0;
 
-else {
-    Console.WriteLine( num + " is even");
+while (sum < num) {
+    sum=sum+2;
+    Console.Write(sum + " ");
 }
-
 
