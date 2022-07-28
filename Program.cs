@@ -126,14 +126,83 @@
 
 // Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все четные числа от 1 до N.
 
-Console.Write("input number N: ");
-int num = Convert.ToInt32(Console.ReadLine());
+// Console.Write("input number N: ");
+// int num = Convert.ToInt32(Console.ReadLine());
 
-int sum;
-sum=0;
+// int sum;
+// sum=0;
 
-while (sum < num) {
-    sum=sum+2;
-    Console.Write(sum + " ");
-}
+// while (sum < num) {
+//     sum=sum+2;
+//     Console.Write(sum + " ");
+// }
+
+// Seminar 2
+
+// Задача: Напишите программу которая выводит случайное число из атрезка [10, 99] и показывает нибольшую цифру числа.
+
+// void ShowNumber(){
+//     int num = new Random().Next(10, 100);
+//     int firstNum = num / 10;
+//     int secondNum = num % 10;
+//     Console.Write(num + "->");
+//     if (firstNum > secondNum){
+//         Console.WriteLine(firstNum);
+//     }
+//     else{
+//         Console.WriteLine(secondNum);
+//     }
+// }
+
+// ShowNumber();
+
+// Задача № 11. Напишите программу, которая выводит случаное трехзначное число и удаляет вторую цифру этого числа.
+
+// void ShowNumber(){
+//     int num = new Random().Next(100, 1000);
+//     int firstNum = num / 100;
+//     int secondNum = firstNum * 10;
+//     int thirdNum = num % 10;
+//     int sum = secondNum + thirdNum;
+//     Console.Write(num + "->" + sum);
+// }
+// ShowNumber();
+
+// Задача № 12. Напишите программу, которая будет принимать на вход два числа и выводить, является ли второе число кратным первому. Если число 2 не кратно числу 1, то программа выводит остаток от деления.
+
+// void multiNum(int a, int b){
+//     if(b%a == 0){
+// Console.WriteLine (b + " кратно " + a);
+//     }
+//     else{
+//         Console.WriteLine(b + " некратно " + a + ", остаток " + b%a);
+//     }
+// }
+// Console.Write("Enter first number: ");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter second number: ");
+// int num2 = Convert.ToInt32(Console.ReadLine());
+
+// multiNum(num1, num2);
+
+// Задача № 14. Напишите программу, которая принимает на вход число и проверяет, кратно ли оно одновременно 7 и 23.
+
+// void multiNum(int a){
+//     if(a%7 == 0 && a%23 ==0){
+// Console.WriteLine (a + " кратно 7 и 23 ");
+//     }
+//     else{
+//         Console.WriteLine(a + " некратно 7 и 23 ");
+//     }
+// }
+// Console.Write("Enter first number: ");
+
+// int num1 = Convert.ToInt32(Console.ReadLine());
+
+// multiNum(num1);
+
+// Задача № 16. Напишите программу, которая принимает на вход два числа и проверяет, является ли одно число квадратом другого.
+
+
+
 
