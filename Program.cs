@@ -248,16 +248,36 @@
 
 // Задача № 13: Напишите программу, которая выводит третью цифры заданного числа или сообщает, что третьей цифры нет.
 
+// void ShowNumber(int num){
+//     while (num>999){
+//         num=num/10;
+//     }
+//     if (num<100){
+//         Console.WriteLine ("third cifra is out");
+//     }
+//     else {
+//         int sum = num%10;
+//         Console.WriteLine (sum);
+//     }
+// }
+
+// Console.Write("input number: ");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+
+// ShowNumber(num1);
+
+// Задача № 15: Напишите программу, которая принимает на вход цифру обозначающую день недели, и проверяет, является ли этот день выходной.
+
 void ShowNumber(int num){
-    while (num>999){
-        num=num/10;
+    
+    if (num>7 || num<1){
+        Console.WriteLine ("Wrong day! Try again!");
     }
-    if (num<100){
-        Console.WriteLine ("third cifra is out");
+    if (num < 6 && num > 0){
+        Console.WriteLine ("working day");
     }
-    else {
-        int sum = num%10;
-        Console.WriteLine (sum);
+    if (num < 8 && num > 5){
+        Console.WriteLine ("it's a weekend!!!");
     }
 }
 
