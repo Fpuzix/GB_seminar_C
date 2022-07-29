@@ -268,20 +268,26 @@
 
 // Задача № 15: Напишите программу, которая принимает на вход цифру обозначающую день недели, и проверяет, является ли этот день выходной.
 
-void ShowNumber(int num){
+// void ShowNumber(int num){
     
-    if (num>7 || num<1){
-        Console.WriteLine ("Wrong day! Try again!");
-    }
-    if (num < 6 && num > 0){
-        Console.WriteLine ("working day");
-    }
-    if (num < 8 && num > 5){
-        Console.WriteLine ("it's a weekend!!!");
-    }
-}
+//     if (num>7 || num<1){
+//         Console.WriteLine ("Wrong day! Try again!");
+//     }
+//     if (num < 6 && num > 0){
+//         Console.WriteLine ("working day");
+//     }
+//     if (num < 8 && num > 5){
+//         Console.WriteLine ("it's a weekend!!!");
+//     }
+// }
 
-Console.Write("input number: ");
-int num1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("input number: ");
+// int num1 = Convert.ToInt32(Console.ReadLine());
 
-ShowNumber(num1);
+// ShowNumber(num1);
+
+
+// Seminar 3
+
+
+// 
