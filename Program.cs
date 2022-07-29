@@ -222,25 +222,46 @@
 
 // Задача № 10: Напишите программу, которая принимает на вход трехзначное число и на выходе показывает вторую цифру этого числа.
 
-void ShowNumber(int num){
-    int firstNum = num / 100;
-    int secondNum = num / 10;
-    int sum = secondNum - firstNum * 10;
+// void ShowNumber(int num){
+//     int firstNum = num / 100;
+//     int secondNum = num / 10;
+//     int sum = secondNum - firstNum * 10;
 
-    if (sum==0){
-    Console.Write("nema second cifra");
+//     if (sum==0){
+//     Console.Write("nema second cifra");
+//     }
+//     else{
+//         Console.WriteLine(sum);
+//     }
+// }
+
+// Console.Write("input number: ");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+
+// if(num1>99 && num1<1000){
+//     ShowNumber(num1);
+// }
+// else{
+//     Console.WriteLine ("need number between 99 and 1000");
+// }
+
+
+// Задача № 13: Напишите программу, которая выводит третью цифры заданного числа или сообщает, что третьей цифры нет.
+
+void ShowNumber(int num){
+    while (num>999){
+        num=num/10;
     }
-    else{
-        Console.WriteLine(sum);
+    if (num<100){
+        Console.WriteLine ("third cifra is out");
+    }
+    else {
+        int sum = num%10;
+        Console.WriteLine (sum);
     }
 }
 
 Console.Write("input number: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
-if(num1>99 && num1<1000){
-    ShowNumber(num1);
-}
-else{
-    Console.WriteLine ("need number between 99 and 1000");
-}
+ShowNumber(num1);
