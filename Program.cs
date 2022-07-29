@@ -203,20 +203,44 @@
 
 // Задача № 16. Напишите программу, которая принимает на вход два числа и проверяет, является ли одно число квадратом другого.
 
-void multiNum(int a , int b){
-    if(a == b * b || b == a * a){
-Console.WriteLine (" yeees!!! ");
+// void multiNum(int a , int b){
+//     if(a == b * b || b == a * a){
+// Console.WriteLine (" yeees!!! ");
+//     }
+//     else{
+//         Console.WriteLine(" nooou(( ");
+//     }
+
+// }
+
+// Console.Write("input first number: ");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("input second number: ");
+// int num2 = Convert.ToInt32(Console.ReadLine());
+
+// multiNum(num1, num2);
+
+// Задача № 10: Напишите программу, которая принимает на вход трехзначное число и на выходе показывает вторую цифру этого числа.
+
+void ShowNumber(int num){
+    int firstNum = num / 100;
+    int secondNum = num / 10;
+    int sum = secondNum - firstNum * 10;
+
+    if (sum==0){
+    Console.Write("nema second cifra");
     }
     else{
-        Console.WriteLine(" nooou(( ");
+        Console.WriteLine(sum);
     }
-
 }
 
-Console.Write("input first number: ");
+Console.Write("input number: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("input second number: ");
-int num2 = Convert.ToInt32(Console.ReadLine());
 
-multiNum(num1, num2);
-
+if(num1>99 && num1<1000){
+    ShowNumber(num1);
+}
+else{
+    Console.WriteLine ("need number between 99 and 1000");
+}
