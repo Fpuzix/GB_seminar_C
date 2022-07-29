@@ -402,33 +402,58 @@
 
 // Задача № 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно полиндромом.
 
-Console.Clear();
+// Console.Clear();
 
-void polindrom(int n)
-{
-    int first = n / 10000;
-    int second = n / 1000 - first*10;
-    int fifth = n % 10;
-    int forth = (n % 100 - fifth)/10;
+// void polindrom(int n)
+// {
+//     int first = n / 10000;
+//     int second = n / 1000 - first*10;
+//     int fifth = n % 10;
+//     int forth = (n % 100 - fifth)/10;
 
-    if (first == fifth && second == forth)
-    {
-        Console.WriteLine(n + "--> полиндром");
-    }
-    else
-    {
-        Console.WriteLine(n + "--> не полиндром!");
-    };
-}
+//     if (first == fifth && second == forth)
+//     {
+//         Console.WriteLine(n + "--> полиндром");
+//     }
+//     else
+//     {
+//         Console.WriteLine(n + "--> не полиндром!");
+//     };
+// }
 
-Console.WriteLine("Введите пятизначное число: ");
-int num = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите пятизначное число: ");
+// int num = Convert.ToInt32(Console.ReadLine());
 
-polindrom(num);
-
+// polindrom(num);
 
 
 // Задача № 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+Console.Clear();
+
+double distABC(int x1, int y1, int z1, int x2, int y2, int z2)
+{
+    return Math.Sqrt(Math.Pow(Math.Abs((x2 - x1)), 2) + Math.Pow(Math.Abs((y2 - y1)), 2) + Math.Pow(Math.Abs((z2 - z1)), 2));
+}
+
+Console.WriteLine("Введите координату x1: ");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координату y1: ");
+int y = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координату z1: ");
+int z = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координату x2: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координату y2: ");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координату z2: ");
+int c = Convert.ToInt32(Console.ReadLine());
+
+double res = Math.Round(distABC(x, y, z, a, b, c), 2);
+
+Console.WriteLine("Длина отрезка: " + res);
+
+
 
 
 // Задача № 23: Напишите программу, которая принимает на вход число N  и выдает таблицу кубов чисел от 1 до N.
