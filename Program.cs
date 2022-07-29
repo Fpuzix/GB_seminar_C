@@ -429,31 +429,61 @@
 
 // Задача № 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
-Console.Clear();
+// Console.Clear();
 
-double distABC(int x1, int y1, int z1, int x2, int y2, int z2)
-{
-    return Math.Sqrt(Math.Pow(Math.Abs((x2 - x1)), 2) + Math.Pow(Math.Abs((y2 - y1)), 2) + Math.Pow(Math.Abs((z2 - z1)), 2));
-}
+// double distABC(int x1, int y1, int z1, int x2, int y2, int z2)
+// {
+//     return Math.Sqrt(Math.Pow(Math.Abs((x2 - x1)), 2) + Math.Pow(Math.Abs((y2 - y1)), 2) + Math.Pow(Math.Abs((z2 - z1)), 2));
+// }
 
-Console.WriteLine("Введите координату x1: ");
-int x = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату y1: ");
-int y = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату z1: ");
-int z = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату x2: ");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату y2: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату z2: ");
-int c = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату x1: ");
+// int x = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату y1: ");
+// int y = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату z1: ");
+// int z = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату x2: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату y2: ");
+// int b = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату z2: ");
+// int c = Convert.ToInt32(Console.ReadLine());
 
-double res = Math.Round(distABC(x, y, z, a, b, c), 2);
+// double res = Math.Round(distABC(x, y, z, a, b, c), 2);
 
-Console.WriteLine("Длина отрезка: " + res);
-
+// Console.WriteLine("Длина отрезка: " + res);
 
 
 
 // Задача № 23: Напишите программу, которая принимает на вход число N  и выдает таблицу кубов чисел от 1 до N.
+
+
+Console.Clear();
+
+void listSqrt(int n)
+{
+    int count = 1;
+    Console.Write(n + "-->");
+    if (n > 0)
+    {
+        while (count <= n)
+        {
+            Console.Write(Math.Pow(count, 3) + ", ");
+            count++;
+        }
+    }
+    else
+    {
+        count = -1;
+        while (count >= n)
+        {
+            Console.Write(Math.Pow(count, 3) + ", ");
+            count--;
+        }
+    }
+}
+
+Console.WriteLine("Введите число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+listSqrt(num);
