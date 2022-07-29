@@ -269,7 +269,7 @@
 // Задача № 15: Напишите программу, которая принимает на вход цифру обозначающую день недели, и проверяет, является ли этот день выходной.
 
 // void ShowNumber(int num){
-    
+
 //     if (num>7 || num<1){
 //         Console.WriteLine ("Wrong day! Try again!");
 //     }
@@ -290,4 +290,113 @@
 // Seminar 3
 
 
-// 
+// Задача № 17: Напишите программу, которая принимает на вход координаты точки (х и у), причем Х не равно 0 и У не равно 0 выдеет номер четверти плоскости в которой находиться эта точка.
+
+// void getDot (int x, int y){
+//     if (x == 0 || y == 0) {
+//     Console.WriteLine ("Нет возможности определить четветь");
+//     }
+//     else{
+//         if (x > 0 && y >0){
+//             Console.WriteLine ("1 четверть");
+//         }
+//         if (x > 0 && y < 0){
+//         Console.WriteLine ("4 четверть");
+//         }
+//         if (x < 0 && y > 0){
+//             Console.WriteLine ("2 четверть");
+//         }
+//         if (x < 0 && y < 0){
+//         Console.WriteLine ("3 четверть");
+//         }
+//     }
+// }
+//     Console.WriteLine ("Введите две точки");
+//     int x1 = Convert.ToInt32(Console.ReadLine());
+//     int y1 = Convert.ToInt32(Console.ReadLine());
+
+//     getDot(x1, y1);
+
+
+// Задача № 18: Напишите программу, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (Х и У).
+
+// void getDot (int x){
+//     if (x == 1){
+//         Console.WriteLine ("x > 0 and y >0");
+//     }
+//     else if (x == 4){
+//         Console.WriteLine ("x > 0 and y < 0");
+//     }
+//     else if (x == 2){
+//         Console.WriteLine ("x < 0 and y > 0");
+//     }
+//     else if (x == 3){
+//         Console.WriteLine ("x < 0 and y < 0");
+//     }
+//     else {Console.WriteLine ("Введено некорректное число!");
+//     }
+//     }
+
+// Console.WriteLine ("Введите номер четверти");
+// int x = Convert.ToInt32(Console.ReadLine());
+
+// getDot(x);
+
+// Задача № 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 2D пространстве.
+
+// Console.Clear();
+
+// double distAB(int x1, int x2, int y1, int y2)
+// {
+//     return Math.Sqrt(Math.Pow(Math.Abs((x2 - x1)), 2) + Math.Pow(Math.Abs((y2 - y1)), 2));
+// }
+
+// Console.WriteLine("Введите координату x1: ");
+// int x = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату y1: ");
+// int y = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату a2: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату b2: ");
+// int b = Convert.ToInt32(Console.ReadLine());
+
+// double res = Math.Round(distAB(x, y, a, b), 2);
+
+// Console.WriteLine("Длина отрезка: " + res);
+
+// && для инморта: import lib;
+
+
+// Задача № 22: Напишите программу, которая принимает на вход число N и выдает таблицу квадратов чисел от 1 до N.
+
+// Console.Clear();
+
+// void listSqrt(int n)
+// {
+//     int count = 1;
+//     Console.Write(n + "-->");
+//     if (n > 0)
+//     {
+//         while (count <= n)
+//         {
+//             Console.Write(Math.Pow(count, 2) + ", ");
+//             count++;
+//         }
+//     }
+//     else
+//     {
+//         count = -1;
+//         while (count >= n)
+//         {
+//             Console.Write(Math.Pow(count, 2) + ", ");
+//             count--;
+//         }
+//     }
+// }
+
+// Console.WriteLine("Введите число: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+
+// listSqrt(num);
+
+
