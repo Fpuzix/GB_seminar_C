@@ -458,32 +458,135 @@
 // Задача № 23: Напишите программу, которая принимает на вход число N  и выдает таблицу кубов чисел от 1 до N.
 
 
-Console.Clear();
+// Console.Clear();
 
-void listSqrt(int n)
+// void listSqrt(int n)
+// {
+//     int count = 1;
+//     Console.Write(n + "-->");
+//     if (n > 0)
+//     {
+//         while (count <= n)
+//         {
+//             Console.Write(Math.Pow(count, 3) + ", ");
+//             count++;
+//         }
+//     }
+//     else
+//     {
+//         count = -1;
+//         while (count >= n)
+//         {
+//             Console.Write(Math.Pow(count, 3) + ", ");
+//             count--;
+//         }
+//     }
+// }
+
+// Console.WriteLine("Введите число: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+
+// listSqrt(num);
+
+
+//  Seminar 4
+
+
+// Задача № 24: Напишите программу, которая примание на вход число А и выдает сумму чисел от 1 до А.
+
+// int sumToNum(int num)
+// {
+//     int sum = 0;
+//     for (int i = 1; i <= num; i++)
+//     {
+//         sum += i;
+//     }
+//     return sum;
+// }
+
+// Console.WriteLine("Input number: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Sum of elements is " + sumToNum(number));
+
+
+// Задача № 26: Напишите программу, которая принимает на вход число и выдает количество цифр в числе.
+
+// int countNum(int num)
+
+// {
+//     int count = 0;
+//     while (num>0)
+
+//     {
+//      num = num / 10;
+//      count++;
+//     }
+//     return (count);
+// }
+
+// Console.WriteLine("Input number: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("ответ " + countNum(number));
+
+
+// Задача №: Напишите программу, которая принимает на вход число N и выдает произведение чисел от 1 до N.
+
+// int sumToNum(int num)
+// {
+//     int multiplay = 1;
+//     for (int i = 1; i <= num; i++)
+//     {
+//         multiplay *= i;
+//     }
+//     return multiplay;
+// }
+
+// Console.WriteLine("Input number: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Sum of elements is " + sumToNum(number));
+
+
+// Задача № 30: Напишите программу, которая выводит массив из 8 элементов, заполненый нулями и единицами в случайном порядке.
+// создаем массив случайных чисел, где size - количество элементов в массиве, min - это  началоа диапазона случайных чисел, max - до какого генерирует.
+
+int[] CreateRandomArray(int size, int min, int max)
 {
-    int count = 1;
-    Console.Write(n + "-->");
-    if (n > 0)
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
     {
-        while (count <= n)
-        {
-            Console.Write(Math.Pow(count, 3) + ", ");
-            count++;
-        }
+        array[i] = new Random().Next(min, max+1);
     }
-    else
+    return array;
+}
+
+// создаем массив из чисел, которые вводим.
+
+int[] CreateArray(int size)
+{
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
     {
-        count = -1;
-        while (count >= n)
-        {
-            Console.Write(Math.Pow(count, 3) + ", ");
-            count--;
-        }
+        Console.Write("input " + i + " elemets: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+}
+
+// выводим значения элементов массива в однус троку черех пробел.
+
+void ShowArray(int[] array)
+{
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
     }
 }
 
-Console.WriteLine("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
+int[] myRandomArray = CreateRandomArray(size: 8, min: -10, max: 10);
+ShowArray(myRandomArray);
+Console.WriteLine();
+int[] myArray = CreateArray(6);
+ShowArray(myArray);
 
-listSqrt(num);
+
