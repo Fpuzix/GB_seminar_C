@@ -609,23 +609,48 @@
 
 // Задача № 27: Напишите программу, которая принимает на вход число и выдает сумму цифр в числе.
 
-int countSum(int num)
+// int countSum(int num)
 
+// {
+//     int sum = 0;
+
+//     while (num > 0)
+
+//     {
+//         sum = sum + num % 10;
+//         num = num / 10;
+//     }
+//     return (sum);
+
+// }
+
+// Console.WriteLine("Input number: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("ответ " + countSum(number));
+
+
+// Задача № 29: Напишите программу, которая задает массив из 8 элементов и выводит их на экран.
+
+int[] CreateArray(int size)
 {
-    int sum = 0;
-
-    while (num > 0)
-
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
     {
-        sum = sum + num % 10;
-        num = num / 10;
+        array[i] = new Random().Next();
     }
-    return (sum);
-
+    return array;
 }
 
-Console.WriteLine("Input number: ");
-int number = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("ответ " + countSum(number));
+void ShowArray(int[] array)
+{
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+}
 
 
+int[] myRandomArray = CreateArray(size: 8);
+ShowArray(myRandomArray);
+Console.WriteLine();
