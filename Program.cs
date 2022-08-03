@@ -592,17 +592,40 @@
 
 // Задача № 25: Напишите цикл, который принимает на вход два числа (А и В) и возводит число А в натуральную степень В.
 
-Console.Clear();
+// Console.Clear();
 
-void result(int n, int m)
+// void result(int n, int m)
+// {
+//     Console.Write(Math.Pow(n, m));
+
+// }
+
+// Console.WriteLine("Input first number: ");
+// int firstNum = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input second number: ");
+// int secondNum = Convert.ToInt32(Console.ReadLine());
+
+// result(firstNum, secondNum);
+
+// Задача № 27: Напишите программу, которая принимает на вход число и выдает сумму цифр в числе.
+
+int countSum(int num)
+
 {
-    Console.Write(Math.Pow(n, m));
+    int sum = 0;
+
+    while (num > 0)
+
+    {
+        sum = sum + num % 10;
+        num = num / 10;
+    }
+    return (sum);
 
 }
 
-Console.WriteLine("Input first number: ");
-int firstNum = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Input second number: ");
-int secondNum = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("ответ " + countSum(number));
 
-result(firstNum, secondNum);
+
