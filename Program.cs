@@ -549,44 +549,60 @@
 // Задача № 30: Напишите программу, которая выводит массив из 8 элементов, заполненый нулями и единицами в случайном порядке.
 // создаем массив случайных чисел, где size - количество элементов в массиве, min - это  началоа диапазона случайных чисел, max - до какого генерирует.
 
-int[] CreateRandomArray(int size, int min, int max)
+// int[] CreateRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max+1);
+//     }
+//     return array;
+// }
+
+// // создаем массив из чисел, которые вводим.
+
+// int[] CreateArray(int size)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         Console.Write("input " + i + " elemets: ");
+//         array[i] = Convert.ToInt32(Console.ReadLine());
+//     }
+//     return array;
+// }
+
+// // выводим значения элементов массива в однус троку черех пробел.
+
+// void ShowArray(int[] array)
+// {
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+// }
+
+// int[] myRandomArray = CreateRandomArray(size: 8, min: -10, max: 10);
+// ShowArray(myRandomArray);
+// Console.WriteLine();
+// int[] myArray = CreateArray(6);
+// ShowArray(myArray);
+
+
+// Задача № 25: Напишите цикл, который принимает на вход два числа (А и В) и возводит число А в натуральную степень В.
+
+Console.Clear();
+
+void result(int n, int m)
 {
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next(min, max+1);
-    }
-    return array;
+    Console.Write(Math.Pow(n, m));
+
 }
 
-// создаем массив из чисел, которые вводим.
+Console.WriteLine("Input first number: ");
+int firstNum = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input second number: ");
+int secondNum = Convert.ToInt32(Console.ReadLine());
 
-int[] CreateArray(int size)
-{
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        Console.Write("input " + i + " elemets: ");
-        array[i] = Convert.ToInt32(Console.ReadLine());
-    }
-    return array;
-}
-
-// выводим значения элементов массива в однус троку черех пробел.
-
-void ShowArray(int[] array)
-{
-
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-}
-
-int[] myRandomArray = CreateRandomArray(size: 8, min: -10, max: 10);
-ShowArray(myRandomArray);
-Console.WriteLine();
-int[] myArray = CreateArray(6);
-ShowArray(myArray);
-
-
+result(firstNum, secondNum);
