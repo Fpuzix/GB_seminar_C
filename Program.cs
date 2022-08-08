@@ -817,3 +817,45 @@
 // }
 
 
+// Задача № 34: Задайте массив заполненный случаными положительными и трехзначными числами. Напишите программу, которая покажет количество четных чисел в массиве.
+
+int[] CreateRandomArray(int size, int min, int max)
+{
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(min, max + 1);
+    }
+    return array;
+}
+
+void ShowArray(int[] array)
+{
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+}
+
+int ArrayCheck(int[] array)
+{
+
+    int count = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0)
+        {
+            count++;
+        }
+
+    }
+    return count;
+}
+
+int[] myArray = CreateRandomArray(size: 8, min: 100, max: 999);
+ShowArray(myArray);
+Console.WriteLine();
+Console.WriteLine($"--> {ArrayCheck(myArray)}");
+
