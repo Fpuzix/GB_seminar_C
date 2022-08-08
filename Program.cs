@@ -819,6 +819,49 @@
 
 // Задача № 34: Задайте массив заполненный случаными положительными и трехзначными числами. Напишите программу, которая покажет количество четных чисел в массиве.
 
+// int[] CreateRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max + 1);
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[] array)
+// {
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+// }
+
+// int ArrayCheck(int[] array)
+// {
+
+//     int count = 0;
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] % 2 == 0)
+//         {
+//             count++;
+//         }
+
+//     }
+//     return count;
+// }
+
+// int[] myArray = CreateRandomArray(size: 8, min: 100, max: 999);
+// ShowArray(myArray);
+// Console.WriteLine();
+// Console.WriteLine($"--> {ArrayCheck(myArray)}");
+
+
+// Задача № 36: Задачайте одномерный массив, заполненный случаными числами. найдите сумму элементов, стоящих на нечетных позициях.
+
 int[] CreateRandomArray(int size, int min, int max)
 {
     int[] array = new int[size];
@@ -838,24 +881,21 @@ void ShowArray(int[] array)
     }
 }
 
-int ArrayCheck(int[] array)
+int ArraySum (int[] array)
 {
 
-    int count = 0;
+    int sum = 0;
 
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 1; i < array.Length; i+=2)
     {
-        if (array[i] % 2 == 0)
-        {
-            count++;
-        }
-
+        sum+= array[i];
     }
-    return count;
+    return sum;
 }
 
-int[] myArray = CreateRandomArray(size: 8, min: 100, max: 999);
+int[] myArray = CreateRandomArray(size: 8, min: 0, max: 100);
 ShowArray(myArray);
 Console.WriteLine();
-Console.WriteLine($"--> {ArrayCheck(myArray)}");
+Console.WriteLine($"--> {ArraySum(myArray)}");
+
 
