@@ -631,26 +631,189 @@
 
 // Задача № 29: Напишите программу, которая задает массив из 8 элементов и выводит их на экран.
 
-int[] CreateArray(int size)
-{
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next();
-    }
-    return array;
-}
+// int[] CreateArray(int size)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next();
+//     }
+//     return array;
+// }
 
-void ShowArray(int[] array)
-{
+// void ShowArray(int[] array)
+// {
 
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-}
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+// }
 
 
-int[] myRandomArray = CreateArray(size: 8);
-ShowArray(myRandomArray);
-Console.WriteLine();
+// int[] myRandomArray = CreateArray(size: 8);
+// ShowArray(myRandomArray);
+// Console.WriteLine();
+
+
+// Seminar № 5
+
+// Пример форматирования
+
+// string name = "Имя";
+// int age = 99;
+// Console.WriteLine("Имя: {0} Возраст: {1}", name, age)
+
+// int number = 23;
+// string result = string.Format("{0:f}", number);
+// Console.WriteLine(result);
+
+// double number2 = 45.08;
+// string result2 = string.Format("{0:f5}", number2);
+// Console.WriteLine(result2);
+
+// string name = "Имя";
+// int age = 99;
+// Console.WriteLine($"Имя: {name} Возраст: {age}");
+
+// int x = 8;
+// int y = 7;
+// string result = $"{x} + {y} = {x+y}";
+// Console.WriteLine(result);
+
+// string name = "Имя";
+// int age = 99;
+
+// Console.WriteLine($"Имя: {name, -10} Возраст: {age}") // пробелы после
+// Console.WriteLine($"Имя: {name, 15} Возраст: {age}") // пробелы до
+
+
+// Задача № 31: Задайте массив из 12 элементов, заполненный случайными числами из промежтка -9, 9. Найдите сумму отрицательных и положительных элементов массива.
+
+
+// int[] CreateRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max+1);
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[] array)
+// {
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int [] myArray = CreateRandomArray(12, -9, 9);
+// ShowArray(myArray);
+
+// int sum_pos =0;
+// int sum_neg =0;
+// for (int i = 0; i < myArray.Length; i++)
+// {
+//     if(myArray[i]>0)
+//     sum_pos+= myArray[i];
+//     else
+//     sum_neg+=myArray[i];
+// }
+
+// Console.WriteLine($"Сумма положительных: {sum_pos}. Сумма отрицательных: {sum_neg}");
+
+
+// Задача № 32: Напишите программу замена элементов массива: положительный элементы замените на соответствующие отрицательные, и наоборот.
+
+// int[] CreateRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max+1);
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[] array)
+// {
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int [] myArray = CreateRandomArray(12, -9, 9);
+// ShowArray(myArray);
+
+// for (int i = 0; i < myArray.Length; i++)
+// {
+//     myArray[i] *= -1;
+// }
+
+// ShowArray(myArray);
+
+
+// Задача № 33: Задайте массив. Напишите программу, которая определяет, присутсвует ли заданное число в массиве.
+
+
+// int[] CreateRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max + 1);
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[] array)
+// {
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// Console.WriteLine("input integer number: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// int[] myArray = CreateRandomArray(12, -9, 9);
+// ShowArray(myArray);
+
+// int ArrayCheck(int[] array, int num)
+// {
+//     for (int i = 0; i < myArray.Length; i++)
+//     {
+//         if (myArray[i] == num)
+//         {
+//             return 1;
+
+//         }
+//     }
+//     return 0;
+
+// }
+
+// ArrayCheck(myArray, n);
+
+// if (ArrayCheck(myArray, n) == 1)
+// {
+//     Console.WriteLine($"{n} ЕСТЬ");
+// }
+
+// else
+// {
+
+//     Console.WriteLine($"{n} НЕТ");
+// }
+
+
