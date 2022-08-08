@@ -862,6 +862,45 @@
 
 // Задача № 36: Задачайте одномерный массив, заполненный случаными числами. найдите сумму элементов, стоящих на нечетных позициях.
 
+// int[] CreateRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max + 1);
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[] array)
+// {
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+// }
+
+// int ArraySum (int[] array)
+// {
+
+//     int sum = 0;
+
+//     for (int i = 1; i < array.Length; i+=2)
+//     {
+//         sum+= array[i];
+//     }
+//     return sum;
+// }
+
+// int[] myArray = CreateRandomArray(size: 8, min: 0, max: 100);
+// ShowArray(myArray);
+// Console.WriteLine();
+// Console.WriteLine($"--> {ArraySum(myArray)}");
+
+
+// Задача № 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
 int[] CreateRandomArray(int size, int min, int max)
 {
     int[] array = new int[size];
@@ -881,21 +920,29 @@ void ShowArray(int[] array)
     }
 }
 
-int ArraySum (int[] array)
+int Array(int[] array)
 {
 
-    int sum = 0;
+    int max = array[0];
+    int min = array[0];
 
-    for (int i = 1; i < array.Length; i+=2)
+    for (int i = 0; i < array.Length; i++)
     {
-        sum+= array[i];
+        if (array[i] > max)
+        {
+            max = array[i];
+            if (array[i] < min)
+            {
+                min = array[i];
+            }
+        }
+
     }
-    return sum;
+    return max - min;
 }
 
 int[] myArray = CreateRandomArray(size: 8, min: 0, max: 100);
 ShowArray(myArray);
 Console.WriteLine();
-Console.WriteLine($"--> {ArraySum(myArray)}");
-
+Console.WriteLine($"--> {Array(myArray)}");
 
