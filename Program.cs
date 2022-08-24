@@ -1914,63 +1914,215 @@
 // Задача № 60: Сформулируйте трехмерный массив из неповторяющихся двузначных чисел. напишите программу,
 // которая будет построчно выводить массив, добавляя индекс каждого элемента.
 
-Console.Clear();
-Console.WriteLine("input with space:");
-string[] nums=Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
-int[,,] myArray = GetArray(new int[] {int.Parse(nums[0]), int.Parse(nums[1]), int.Parse(nums[2])}, 10,99);
+// Console.Clear();
+// Console.WriteLine("input with space:");
+// string[] nums=Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+// int[,,] myArray = GetArray(new int[] {int.Parse(nums[0]), int.Parse(nums[1]), int.Parse(nums[2])}, 10,99);
 
-ShowArray(myArray);
+// ShowArray(myArray);
 
-int [,,] GetArray (int[] sizes, int min, int max)
-{
-    int [,,] result = new int[sizes[0], sizes[1], sizes[2]];
-    for (int i = 0; i < result.GetLength(0); i++)
-    {
-        for (int j = 0; j < result.GetLength(1); j++)
-        {
-            int k=0;
-            while (k<result.GetLength(2))
-            {
-                int element=new Random().Next(min,max+1);
-                if(FindElement(result,element))continue;
-                result[i,j,k]=element;
-                k++;
-            }
-        }
-    }
-    return result;
-}
+// int [,,] GetArray (int[] sizes, int min, int max)
+// {
+//     int [,,] result = new int[sizes[0], sizes[1], sizes[2]];
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < result.GetLength(1); j++)
+//         {
+//             int k=0;
+//             while (k<result.GetLength(2))
+//             {
+//                 int element=new Random().Next(min,max+1);
+//                 if(FindElement(result,element))continue;
+//                 result[i,j,k]=element;
+//                 k++;
+//             }
+//         }
+//     }
+//     return result;
+// }
 
-bool FindElement(int[,,] array, int el)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            for (int k = 0; k < array.GetLength(2); k++)
-            {
-                if(array[i,j,k]==el) return true;
-            }
-        }
-    }
-    return false;
-}
+// bool FindElement(int[,,] array, int el)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(2); k++)
+//             {
+//                 if(array[i,j,k]==el) return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
 
-void ShowArray(int[,,] array)
-{
-    Console.WriteLine();
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            for (int k = 0; k < array.GetLength(2); k++)
-            {
-                Console.Write($"{array[i, j,k]} ({i},{j}{k}) ");
-            }
-        Console.WriteLine();    
-        }
-        Console.WriteLine();
-    }
-}
+// void ShowArray(int[,,] array)
+// {
+//     Console.WriteLine();
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(2); k++)
+//             {
+//                 Console.Write($"{array[i, j,k]} ({i},{j}{k}) ");
+//             }
+//         Console.WriteLine();    
+//         }
+//         Console.WriteLine();
+//     }
+// }
 
-// понятно, что такое трехмерный массив, понятно как заполняется, но не могу вопринять то, что выводит Convole ))
+// // понятно, что такое трехмерный массив, понятно как заполняется, но не могу вопринять то, что выводит Convole ))
+
+
+// // Задача № 62: Заполните спирально массив 4 на 4.
+// // Посмотреть час:30!!!!!!
+
+// Console.Clear();
+// Console.Write($"Введите размер матрицы: ");
+// int s = int.Parse(ReadLine());
+// int[,] arr = GetArray(s);
+
+// ShowArray(arr);
+
+// int[,] GetArray(int size);
+// {
+//     int[,]result = new int[size];
+//     int i = 0;
+//     int j=0;
+//     int rowE=size-1;
+//     int columnE=size-1;
+//     int rowS=0;
+//     int columnsS=0;
+//     bool left=true;
+//     bool top=true;
+//     int count = 0;
+//     while (count < size * size)
+//     {
+//         count++;
+//         result[i, j] = count;
+//         if (left && top)
+//         {
+//             if (j == columnE)
+//             {
+//                 rowS++;
+//                 top = true;
+//                 left = false;
+//                 i++;
+//                 continue;
+//             }
+//             else
+//             {
+//                 j++;
+//                 continue;
+//             }
+//         }
+//         if (!left && top)
+//         {
+//             if (i == rowE) ;
+//             {
+//                 columnE--;
+//                 top = false;
+//                 left = false;
+//                 j--;
+//                 continue;
+//             }
+
+// else
+//                     {
+//                         i++;
+//                         continue;
+//                     }
+//                 }
+
+//                 if(!left&&!top)
+//                 {if(j==columnS)
+//                 {rowE--;
+//                 top = false;
+//                 left=true;
+//                 }
+                
+                
+//                 }
+//             }
+
+//         }
+
+// Задача № 63: Задайте значение Н. Напшите программу, которая выведет все натуральные числа в промежутке от 1 до Н.
+
+// Console.Clear();
+// Console.Write("inpun N: ");
+// int n = int.Parse(Console.ReadLine());
+
+// Console.WriteLine(PrintNumbers(1,n));
+
+// string PrintNumbers(int start, int end)
+// {
+//     if(start==end) return start.ToString();
+//     return (start+ " " + PrintNumbers(start+1, end));
+// }
+
+// через цикл:
+// int start =1;
+// while(start<=end)
+// {
+//     Console.Write($"{start ++} ")
+// }
+
+
+// Задача № 65: Задайте значения М и Н. Напишите программу, которая выведет все натуральные числа в промежутке от М до Н.
+
+// Console.Clear();
+
+// Console.Write("inpun m: ");
+// int m = int.Parse(Console.ReadLine());
+
+// Console.Write("inpun n: ");
+// int n = int.Parse(Console.ReadLine());
+
+// Console.WriteLine(PrintNumbers(m,n));
+
+// string PrintNumbers(int start, int end)
+// {
+//     if(start==end) return start.ToString();
+//     return (start+ " " + PrintNumbers(start+1, end));
+// }
+
+
+
+// Зачада № __: Напишите программу, которая будет принимать на вход число и возвращать сумму его цифр.
+
+// Console.Clear();
+// Console.Write("input number: ");
+
+// int m = int.Parse(Console.ReadLine());
+
+// Console.WriteLine($"{m}->{SumNumbers(m)}");
+
+// int SumNumbers(int number)
+// {
+//     if (number ==0) return 0;
+//     return (number % 10 + SumNumbers(number/10));
+// }
+
+// Задача № 69: Напишите программу, которая на вход принимает два числа А и Б,
+// и возводит число А в целую степень Б с помощью рекурсии.
+
+// Console.Clear();
+// Console.Write("inpun число: ");
+// int m = int.Parse(Console.ReadLine());
+
+// Console.Write("inpun степень: ");
+// int n = int.Parse(Console.ReadLine());
+
+// Console.WriteLine($"{Pow (m, n)}");
+
+// int Pow(int number, int rank)
+// {
+//     if (rank ==0) return 1;
+//     if (rank ==1) return number;
+//     return (number * Pow(number, rank-1));
+// }
+
+
