@@ -1349,6 +1349,82 @@
 // Задача № 50: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этоо элемента или же указание, что такого элемента нет.
 
 
+// int[,] GetArray(int m, int n, int min, int max)
+// {
+//     int[,] result = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             result[i, j] = new Random().Next(min, max);
+//         }
+//     }
+//     return result;
+// }
+
+// void ShowArray(int[,] array)
+// {
+
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j]);
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// bool FindElement(int[,] array, int el)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (array[i, j] == el) return true;
+//         }
+        
+//     }
+//     return false;
+// }
+
+
+// Console.WriteLine("input rows: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input colums: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// Console.Write("Введите значение элемента: ");
+// int el = int.Parse(Console.ReadLine());
+
+// int[,] array = GetArray(m, n, 1, 10);
+
+// ShowArray(array);
+
+// if (FindElement(array, el))
+// {
+//     Console.WriteLine("Элемент найден");
+// }
+// else
+// {
+//     Console.WriteLine("Элемент не найден!");
+// }
+
+// Задача № 52: Зайдайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+Console.WriteLine("input M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+int [,] array = GetArray(m,n, 0, 10);
+
+ShowArray(array);
+
+double[] averageColumns = GetResultArray(array);
+Console.WriteLine($"Среднее арифметическое каждого столбца = {String.Join("; ", averageColumns)}");
+
+
 int[,] GetArray(int m, int n, int min, int max)
 {
     int[,] result = new int[m, n];
@@ -1375,38 +1451,18 @@ void ShowArray(int[,] array)
     }
 }
 
-bool FindElement(int[,] array, int el)
+double [] GetResultArray(int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+double[] result = new double [array.GetLength(1)];
+for (int column = 0; column < array.GetLength(1); column++)
+{
+    double sum = 0;
+    for (int row = 0; row < array.GetLength(0); row++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if (array[i, j] == el) return true;
-        }
-        
+        sum+= array[row, column];
     }
-    return false;
+    result[column] = Math.Round(sum/array.GetLength(0),2);
 }
-
-
-Console.WriteLine("input rows: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input colums: ");
-int n = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите значение элемента: ");
-int el = int.Parse(Console.ReadLine());
-
-int[,] array = GetArray(m, n, 1, 10);
-
-ShowArray(array);
-
-if (FindElement(array, el))
-{
-    Console.WriteLine("Элемент найден");
-}
-else
-{
-    Console.WriteLine("Элемент не найден!");
+return result;
 }
 
