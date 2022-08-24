@@ -1412,57 +1412,289 @@
 
 // Задача № 52: Зайдайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
-Console.WriteLine("input M: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input N: ");
-int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input M: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
 
-int [,] array = GetArray(m,n, 0, 10);
+// int [,] array = GetArray(m,n, 0, 10);
 
-ShowArray(array);
+// ShowArray(array);
 
-double[] averageColumns = GetResultArray(array);
-Console.WriteLine($"Среднее арифметическое каждого столбца = {String.Join("; ", averageColumns)}");
+// double[] averageColumns = GetResultArray(array);
+// Console.WriteLine($"Среднее арифметическое каждого столбца = {String.Join("; ", averageColumns)}");
 
 
-int[,] GetArray(int m, int n, int min, int max)
-{
-    int[,] result = new int[m, n];
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            result[i, j] = new Random().Next(min, max);
-        }
-    }
-    return result;
-}
+// int[,] GetArray(int m, int n, int min, int max)
+// {
+//     int[,] result = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             result[i, j] = new Random().Next(min, max);
+//         }
+//     }
+//     return result;
+// }
 
-void ShowArray(int[,] array)
-{
+// void ShowArray(int[,] array)
+// {
 
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j]);
-        }
-        Console.WriteLine();
-    }
-}
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j]);
+//         }
+//         Console.WriteLine();
+//     }
+// }
 
-double [] GetResultArray(int[,] array)
-{
-double[] result = new double [array.GetLength(1)];
-for (int column = 0; column < array.GetLength(1); column++)
-{
-    double sum = 0;
-    for (int row = 0; row < array.GetLength(0); row++)
-    {
-        sum+= array[row, column];
-    }
-    result[column] = Math.Round(sum/array.GetLength(0),2);
-}
-return result;
-}
+// double [] GetResultArray(int[,] array)
+// {
+// double[] result = new double [array.GetLength(1)];
+// for (int column = 0; column < array.GetLength(1); column++)
+// {
+//     double sum = 0;
+//     for (int row = 0; row < array.GetLength(0); row++)
+//     {
+//         sum+= array[row, column];
+//     }
+//     result[column] = Math.Round(sum/array.GetLength(0),2);
+// }
+// return result;
+// }
+
+
+
+// Seminar № 8.
+
+
+// Задача № 53: Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
+
+// Console.WriteLine("input M: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input min: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input max: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+// int[,] myArray=CreateRandomArray(m,n,min,max);
+// ShowArray(myArray);
+// SwapArray(myArray);
+// Console.WriteLine();
+// ShowArray(myArray);
+
+
+// int[,] CreateRandomArray(int m, int n, int min, int max)
+// {
+
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             array[i, j] = new Random().Next(min, max);
+//         }
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[,] array)
+// {
+
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void SwapArray(int[,] array)
+// {
+//     int buf = 0;
+//     int lastRow = array.GetLength(0) - 1;
+//     for (int column = 0; column < array.GetLength(1); column++)
+//     {
+//         buf = array[0, column];
+//         array[0, column] = array[lastRow, column];
+//         array[lastRow, column] = buf;
+//     }
+
+// }
+
+// Задача № 55: Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы.
+// В случае, если это невозможно, программа должна вывести сообщение для пользователя.
+
+// Console.WriteLine("input M: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input min: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input max: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+// int[,] myArray=CreateRandomArray(m,n,min,max);
+// ShowArray(myArray);
+
+// Console.WriteLine();
+// ShowArray(SwapArray(myArray));
+
+
+// int[,] CreateRandomArray(int m, int n, int min, int max)
+// {
+
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             array[i, j] = new Random().Next(min, max);
+//         }
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[,] array)
+// {
+
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+// // заполненеи по столбцам
+// int[,] SwapArray (int [,] array)
+// {
+
+//     int[,] arrayNew = new int[array.GetLength (0),array.GetLength(1)];
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             arrayNew[j, i] = array[i,j];
+//         }
+//     }
+//     return arrayNew;
+// }
+
+
+// Задача № 57: Составить частотный словарь элементов двумерного массива.
+// Частотный словарь содержит информацию о том, сколько раз втречается элемент входных данных.
+
+// Console.Clear();
+
+// Console.WriteLine("input M: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input min: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input max: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+// int[,] myArray = CreateRandomArray(m, n, min, max);
+// ShowArray(myArray);
+// int[] arrayOne = GetOneArray(myArray);
+// Console.WriteLine(String.Join(" ", arrayOne));
+// SortArray(arrayOne);
+// Console.WriteLine(String.Join(" ", arrayOne));
+// PrintCoutElement(arrayOne);
+
+
+// int[,] CreateRandomArray(int m, int n, int min, int max)
+// {
+
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             array[i, j] = new Random().Next(min, max);
+//         }
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[,] array)
+// {
+//     Console.WriteLine();
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// int[] GetOneArray(int[,] arrayTwo)
+// {
+//     int[] arrayOne = new int[arrayTwo.GetLength(0) * arrayTwo.GetLength(1)];
+//     int index = 0;
+//     for (int i = 0; i < arrayTwo.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arrayTwo.GetLength(1); j++)
+//         {
+//             arrayOne[index] = arrayTwo[i, j];
+//             index++;
+//         }
+//     }
+//     return arrayOne;
+// }
+
+// void SortArray(int[] array)
+// {
+
+//     int buf = 0;
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         for (int j = i + 1; j < array.Length; j++)
+//         {
+//             if (array[i] > array[j])
+//             {
+
+//                 buf = array[i];
+//                 array[i] = array[j];
+//                 array[j] = buf;
+//             }
+//         }
+//     }
+// }
+
+// void PrintCoutElement(int[] array)
+// {
+//     int count = 0;
+//     int temp = array[0];
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] != temp)
+//         {
+//             Console.WriteLine($"{temp} встречается {count} раз");
+//             temp = array[i];
+//             count = 1;
+//         }
+//         else
+//         {
+//             count++;
+//         }
+//     }
+//     Console.WriteLine($"{temp} встречается {count} раз");
+
+// }
+
 
