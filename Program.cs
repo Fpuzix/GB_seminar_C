@@ -949,46 +949,160 @@
 
 // // Задача № 35: Задайте одномерный массив из 123 случайных чисел. найдите количество элементов массива, значение которых лежит в отрезке [10, 99].
 
-int[] CreateRandomArray(int size, int min, int max)
-{
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next(min, max + 1);
-    }
-    return array;
-}
+// int[] CreateRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max + 1);
+//     }
+//     return array;
+// }
 
-void ShowArray(int[] array)
-{
+// void ShowArray(int[] array)
+// {
 
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-}
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+// }
 
-int Array(int[] array)
-{
+// int Array(int[] array)
+// {
 
-    int count = 0;
+//     int count = 0;
 
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] >= 10 && array[i]<=99)
-        {
-            count++;
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] >= 10 && array[i]<=99)
+//         {
+//             count++;
             
-        }
+//         }
 
-    }
-    return count;
-    Console.WriteLine();
-    Console.WriteLine(count);
-}
+//     }
+//     return count;
+//     Console.WriteLine();
+//     Console.WriteLine(count);
+// }
 
-int[] myArray = CreateRandomArray(size: 123, min: 0, max: 200);
-ShowArray(myArray);
-Console.WriteLine("-->");
-Console.WriteLine(Array(myArray));
+// int[] myArray = CreateRandomArray(size: 123, min: 0, max: 200);
+// ShowArray(myArray);
+// Console.WriteLine("-->");
+// Console.WriteLine(Array(myArray));
+
+
+// Seminar № 6.
+
+
+// Задача № Написать программу, которая перевернет одномерный массив.
+
+// int[] CreateRandomArray(int size, int min = 10, int max = 100)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max + 1);
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[] array)
+// {
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// void SwapArray(int[] array)
+// {
+//     int buf = 0;
+
+//     for (int i = 0; i < array.Length/2; i++)
+//     {
+//         buf = array[i];
+//         array[i] = array[array.Length - i - 1];
+//         array[array.Length - i - 1] = buf;
+//     }
+//     ShowArray(array);
+// }
+
+// void SwapArray1(int[] array)
+// {
+//     int[] arr = new int[array.Length];
+
+//     for (int i = 0, j = array.Length - 1; i < array.Length; i++, j--)
+//     {
+//         arr[i] = array[j];
+//     }
+
+//     ShowArray(arr);
+// }
+
+// Console.Write("Введите размер массива: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+
+// int[] arr = CreateRandomArray(size);
+
+// ShowArray(arr);
+// Console.WriteLine();
+// SwapArray(arr);
+// Console.WriteLine();
+// SwapArray1(arr);
+
+
+// Задача № __: Напишите программу, которая принимает на вход три числа и проверяет, может ли существовать треугольник с сторонами такой длины.
+// Теорема о неравенстве треугошльника, каждая сторона треугольника меньше суммы двух дроугихз сторон)
+
+// bool NewNum(double a, double b, double c){
+
+// if (a < b + c && b < a + c && c < b + a)
+// {
+//     return true;
+// }
+// else
+// {
+//     return false;
+// }
+// }
+// double num1 = new Random().NextDouble();
+// Console.WriteLine("{0:f5}", num1);
+// double num2 = new Random().NextDouble();
+// Console.WriteLine("{0:f5}",num2);
+// double num3 = new Random().NextDouble();
+// Console.WriteLine("{0:f5}",num3);
+
+// if (NewNum(num1, num2, num3))
+// {
+//     Console.WriteLine("существует");
+// }
+// else
+// {
+//     Console.WriteLine("неа");
+// }
+
+
+// Задача № 43: Напишите программу, которая найдет точку пересечения двух прямых, заданных уравнениеями y=k1*x+b1, y=k2*x+b2;
+// значения b1, k1, b2 И k2 задаются пользователем.
+
+Console.Write("first number B1: ");
+int b1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("second number K1: ");
+int k1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("first number B2: ");
+int b2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("second number K2: ");
+int k2 = Convert.ToInt32(Console.ReadLine());
+
+int x = 0;
+int y =0;
+
+x=(b2-b1)/(k1-k2);
+y=k1*x+b1;
+
+Console.WriteLine($"ось х {x} ось y {y}");
 
