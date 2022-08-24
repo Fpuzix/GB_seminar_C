@@ -978,7 +978,7 @@
 //         if (array[i] >= 10 && array[i]<=99)
 //         {
 //             count++;
-            
+
 //         }
 
 //     }
@@ -1308,39 +1308,105 @@
 
 // Задача № 47: Задчайте двумерный массив размером М на Н, заполненный случайными вещественными числами.
 
-double[,] GetArray(int m, int n, int min, int max)
+// double[,] GetArray(int m, int n, int min, int max)
+// {
+// double[,] result = new double [m,n];
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < n; j++)
+//     {
+//         result[i,j] = new Random().NextDouble()*(max-min);
+//     }
+// }
+// return result;
+// }
+
+
+// void ShowArray(double[,] inArray)
+// {
+
+//     for (int i = 0; i < inArray.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < inArray.GetLength(1); j++)
+//         {
+//             Console.Write($"{inArray[i,j]:f1}  ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.WriteLine("input M: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// double[,] array = GetArray(m, n, 1, 10);
+
+// ShowArray(array);
+
+
+
+// Задача № 50: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этоо элемента или же указание, что такого элемента нет.
+
+
+int[,] GetArray(int m, int n, int min, int max)
 {
-double[,] result = new double [m,n];
-for (int i = 0; i < m; i++)
-{
-    for (int j = 0; j < n; j++)
+    int[,] result = new int[m, n];
+    for (int i = 0; i < m; i++)
     {
-        result[i,j] = new Random().NextDouble()*(max-min);
-    }
-}
-return result;
-}
-
-
-void ShowArray(double[,] inArray)
-{
-
-    for (int i = 0; i < inArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < inArray.GetLength(1); j++)
+        for (int j = 0; j < n; j++)
         {
-            Console.Write($"{inArray[i,j]:f1}  ");
+            result[i, j] = new Random().Next(min, max);
+        }
+    }
+    return result;
+}
+
+void ShowArray(int[,] array)
+{
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j]);
         }
         Console.WriteLine();
     }
 }
 
-Console.WriteLine("input M: ");
+bool FindElement(int[,] array, int el)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i, j] == el) return true;
+        }
+        
+    }
+    return false;
+}
+
+
+Console.WriteLine("input rows: ");
 int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input N: ");
+Console.WriteLine("input colums: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-double[,] array = GetArray(m, n, 1, 10);
+Console.Write("Введите значение элемента: ");
+int el = int.Parse(Console.ReadLine());
+
+int[,] array = GetArray(m, n, 1, 10);
 
 ShowArray(array);
+
+if (FindElement(array, el))
+{
+    Console.WriteLine("Элемент найден");
+}
+else
+{
+    Console.WriteLine("Элемент не найден!");
+}
 
