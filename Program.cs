@@ -1766,7 +1766,78 @@
 
 // Задача № 56: Задайте прямоугольный двумерный массив. напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
-int[,] CreateRandomArray(int m, int n, int min, int max)
+// int[,] CreateRandomArray(int m, int n, int min, int max)
+// {
+
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             array[i, j] = new Random().Next(min, max);
+//         }
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[,] array)
+// {
+//     Console.WriteLine();
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// int MinNumRows(int[,] array)
+// {
+//     int row = 0;
+//     int minsum = 0;
+//     for (int i = 0; i < array.GetLength(1); i++)
+//     {
+//         minsum = minsum + array[0, i];
+//     }
+
+//     for (int i = 1; i < array.GetLength(0); i++)
+//     {
+//         int sum = 0;
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             sum = sum + array[i, j];
+//         }
+//         if (minsum > sum)
+//         {
+//             minsum = sum;
+//             row = i;
+//         }
+//     }
+//     return row;
+// }
+
+// Console.Clear();
+
+// Console.WriteLine("input Rows: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input Columns: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input min: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input max: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+// int[,] myArray = CreateRandomArray(m, n, min, max);
+// ShowArray(myArray);
+// Console.WriteLine($"минимальная сумма в ряду c индексом {MinNumRows(myArray)}");
+
+
+// Задача № 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+
+
+int[,] CreateRandomArray(int m, int n)
 {
 
     int[,] array = new int[m, n];
@@ -1774,7 +1845,7 @@ int[,] CreateRandomArray(int m, int n, int min, int max)
     {
         for (int j = 0; j < n; j++)
         {
-            array[i, j] = new Random().Next(min, max);
+            array[i, j] = new Random().Next(1, 10);
         }
     }
     return array;
@@ -1793,42 +1864,49 @@ void ShowArray(int[,] array)
     }
 }
 
-int MinNumRows(int[,] array)
+int [,] GetResult (int[,] arrayA, int [,] arrayB)
 {
-    int row = 0;
-    int minsum = 0;
-    for (int i = 0; i < array.GetLength(1); i++)
-    {
-        minsum = minsum + array[0, i];
-    }
 
-    for (int i = 1; i < array.GetLength(0); i++)
+
+int[,]arrayC= new int[arrayA.GetLength(0), arrayB.GetLength(1)];
+
+for (int i = 0; i < arrayA.GetLength(0); i++)
+{
+    for (int j = 0; j < arrayB.GetLength(1); j++)
     {
-        int sum = 0;
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int temp = 0; temp < arrayA.GetLength(1); temp++)
         {
-            sum = sum + array[i, j];
-        }
-        if (minsum > sum)
-        {
-            minsum = sum;
-            row = i;
+            arrayC[i,j]=arrayA[i,temp]*arrayB[temp,j];
         }
     }
-    return row;
+    }
+return arrayC;
 }
+
 
 Console.Clear();
 
-Console.WriteLine("input Rows: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input Columns: ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input min: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input max: ");
-int max = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input Rows1: ");
+int rowsA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input Columns1: ");
+int columnsA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input Rows2: ");
+int rowsB = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input Column2: ");
+int columnsB = Convert.ToInt32(Console.ReadLine());
 
-int[,] myArray = CreateRandomArray(m, n, min, max);
-ShowArray(myArray);
-Console.WriteLine($"минимальная сумма в ряду c индексом {MinNumRows(myArray)}");
+if (columnsA!=rowsB)
+{
+    Console.WriteLine("не работает!!!");
+    return;
+}
+
+int[,] myArrayA = CreateRandomArray(rowsA, columnsA);
+int[,] myArrayB = CreateRandomArray(rowsB, columnsB);
+ShowArray(myArrayA);
+Console.WriteLine();
+ShowArray(myArrayB);
+Console.WriteLine();
+
+ShowArray(GetResult(myArrayA,myArrayB));
+
