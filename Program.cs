@@ -1837,76 +1837,140 @@
 // Задача № 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
 
-int[,] CreateRandomArray(int m, int n)
-{
+// int[,] CreateRandomArray(int m, int n)
+// {
 
-    int[,] array = new int[m, n];
-    for (int i = 0; i < m; i++)
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             array[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[,] array)
+// {
+//     Console.WriteLine();
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// int [,] GetResult (int[,] arrayA, int [,] arrayB)
+// {
+
+
+// int[,]arrayC= new int[arrayA.GetLength(0), arrayB.GetLength(1)];
+
+// for (int i = 0; i < arrayA.GetLength(0); i++)
+// {
+//     for (int j = 0; j < arrayB.GetLength(1); j++)
+//     {
+//         for (int temp = 0; temp < arrayA.GetLength(1); temp++)
+//         {
+//             arrayC[i,j]=arrayA[i,temp]*arrayB[temp,j];
+//         }
+//     }
+//     }
+// return arrayC;
+// }
+
+
+// Console.Clear();
+
+// Console.WriteLine("input Rows1: ");
+// int rowsA = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input Columns1: ");
+// int columnsA = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input Rows2: ");
+// int rowsB = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input Column2: ");
+// int columnsB = Convert.ToInt32(Console.ReadLine());
+
+// if (columnsA!=rowsB)
+// {
+//     Console.WriteLine("не работает!!!");
+//     return;
+// }
+
+// int[,] myArrayA = CreateRandomArray(rowsA, columnsA);
+// int[,] myArrayB = CreateRandomArray(rowsB, columnsB);
+// ShowArray(myArrayA);
+// Console.WriteLine();
+// ShowArray(myArrayB);
+// Console.WriteLine();
+
+// ShowArray(GetResult(myArrayA,myArrayB));
+
+
+// Задача № 60: Сформулируйте трехмерный массив из неповторяющихся двузначных чисел. напишите программу,
+// которая будет построчно выводить массив, добавляя индекс каждого элемента.
+
+Console.Clear();
+Console.WriteLine("input with space:");
+string[] nums=Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+int[,,] myArray = GetArray(new int[] {int.Parse(nums[0]), int.Parse(nums[1]), int.Parse(nums[2])}, 10,99);
+
+ShowArray(myArray);
+
+int [,,] GetArray (int[] sizes, int min, int max)
+{
+    int [,,] result = new int[sizes[0], sizes[1], sizes[2]];
+    for (int i = 0; i < result.GetLength(0); i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < result.GetLength(1); j++)
         {
-            array[i, j] = new Random().Next(1, 10);
+            int k=0;
+            while (k<result.GetLength(2))
+            {
+                int element=new Random().Next(min,max+1);
+                if(FindElement(result,element))continue;
+                result[i,j,k]=element;
+                k++;
+            }
         }
     }
-    return array;
+    return result;
 }
 
-void ShowArray(int[,] array)
+bool FindElement(int[,,] array, int el)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                if(array[i,j,k]==el) return true;
+            }
+        }
+    }
+    return false;
+}
+
+void ShowArray(int[,,] array)
 {
     Console.WriteLine();
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write(array[i, j] + " ");
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write($"{array[i, j,k]} ({i},{j}{k}) ");
+            }
+        Console.WriteLine();    
         }
         Console.WriteLine();
     }
 }
 
-int [,] GetResult (int[,] arrayA, int [,] arrayB)
-{
-
-
-int[,]arrayC= new int[arrayA.GetLength(0), arrayB.GetLength(1)];
-
-for (int i = 0; i < arrayA.GetLength(0); i++)
-{
-    for (int j = 0; j < arrayB.GetLength(1); j++)
-    {
-        for (int temp = 0; temp < arrayA.GetLength(1); temp++)
-        {
-            arrayC[i,j]=arrayA[i,temp]*arrayB[temp,j];
-        }
-    }
-    }
-return arrayC;
-}
-
-
-Console.Clear();
-
-Console.WriteLine("input Rows1: ");
-int rowsA = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input Columns1: ");
-int columnsA = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input Rows2: ");
-int rowsB = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input Column2: ");
-int columnsB = Convert.ToInt32(Console.ReadLine());
-
-if (columnsA!=rowsB)
-{
-    Console.WriteLine("не работает!!!");
-    return;
-}
-
-int[,] myArrayA = CreateRandomArray(rowsA, columnsA);
-int[,] myArrayB = CreateRandomArray(rowsB, columnsB);
-ShowArray(myArrayA);
-Console.WriteLine();
-ShowArray(myArrayB);
-Console.WriteLine();
-
-ShowArray(GetResult(myArrayA,myArrayB));
-
+// понятно, что такое трехмерный массив, понятно как заполняется, но не могу вопринять то, что выводит Convole ))
