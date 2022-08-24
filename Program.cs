@@ -1698,3 +1698,67 @@
 // }
 
 
+// Задача № 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+
+int[,] CreateRandomArray(int m, int n, int min, int max)
+{
+
+    int[,] array = new int[m, n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            array[i, j] = new Random().Next(min, max);
+        }
+    }
+    return array;
+}
+
+void ShowArray(int[,] array)
+{
+    Console.WriteLine();
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+void SortArray(int[,] array)
+{
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        for (int temp = j+1; temp < array.GetLength (1); temp++)
+        {
+            if(array[i,temp]>array[i,j])
+            {
+                int buf = array[i,j];
+                array[i,j] = array [i,temp];
+                array[i,temp] = buf;
+            }
+        }
+    }
+}
+}
+
+Console.Clear();
+
+Console.WriteLine("input Rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input Columns: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input min: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input max: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[,] myArray = CreateRandomArray(m, n, min, max);
+ShowArray(myArray);
+SortArray(myArray);
+Console.WriteLine();
+ShowArray(myArray);
