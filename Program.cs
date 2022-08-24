@@ -1109,22 +1109,199 @@
 
 // Задача № _**_: перевести 10тичное число в двоичное число.
 
-int ConvertDecBin(int num){
+// int ConvertDecBin(int num){
 
-int BinNum = 0;
-int count = 0;
-while (num>= 1){
+// int BinNum = 0;
+// int count = 0;
+// while (num>= 1){
 
-    if (count == 0) count =1;
-    else count = count*10;
-    BinNum=BinNum + (num%2)*count;
-    num=num/2;
-}
-return BinNum;
-}
+//     if (count == 0) count =1;
+//     else count = count*10;
+//     BinNum=BinNum + (num%2)*count;
+//     num=num/2;
+// }
+// return BinNum;
+// }
 
-Console.WriteLine ("введите число");
-int DecNum = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(DecNum + "->" + ConvertDecBin(DecNum));
+// Console.WriteLine ("введите число");
+// int DecNum = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine(DecNum + "->" + ConvertDecBin(DecNum));
 
 // Пришлось подглядеть(((.
+
+
+// Seminar № 7.
+
+// Задача № 46: Задайте двумерный массив размером мхн, заполненный случайными целыми числами.
+
+// int[,] CreateRandomArray(int m, int n, int min, int max)
+// {
+//     int[,] array = new int[m,n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//            array[i,j] = new Random().Next(min, max + 1); 
+//         }
+
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[,] array)
+// {
+
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//        for (int j = 0; j < array.GetLength(1); j++)
+//        {
+//         Console.Write(array[i,j] + " ");
+//        }
+//       Console.WriteLine();        
+//     }
+
+// }
+
+// int[,] myArray = CreateRandomArray(3,4,1,10);
+// ShowArray(myArray);
+
+
+
+// Задача № __: Задачайте двумерный массив размера М на Н, каждый элемент в массиве находится по формуле Аmn = m+n. Выведите полученный массив на экран.
+
+// int[,] CreateArray(int m, int n)
+// {
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             array[i, j] = i + j;
+//         }
+
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[,] array)
+// {
+
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+
+// }
+
+// int[,] myArray = CreateArray(3, 4);
+// ShowArray(myArray);
+
+
+// Задача № 49: Задайте двумерный массив. Найдите элементы, у которых оба индекса четные, и замените эти элементы на их квадраты.
+
+// int[,] CreateRandomArray(int m, int n, int min, int max)
+// {
+//     int[,] array = new int[m,n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//            array[i,j] = new Random().Next(min, max + 1); 
+//         }
+
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[,] array)
+// {
+
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//        for (int j = 0; j < array.GetLength(1); j++)
+//        {
+//         Console.Write(array[i,j] + " ");
+//        }
+//       Console.WriteLine();        
+//     }
+
+// }
+// void EvenArray(int[,] array)
+// {
+
+//     for (int i = 2; i < array.GetLength(0); i++)
+//     {
+//        for (int j = 2; j < array.GetLength(1); j++)
+//        {
+//         if (i%2==0 && j%2==0)
+//         array[i,j]*=array[i,j];
+//        }
+//       Console.WriteLine();        
+//     }
+
+// }
+
+// int[,] myArray = CreateRandomArray(3,4,1,10);
+// ShowArray(myArray);
+// EvenArray(myArray);
+// ShowArray(myArray);
+
+
+// Задача № 51: Задачайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали.
+
+// int[,] CreateRandomArray(int m, int n, int min, int max)
+// {
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             array[i, j] = new Random().Next(min, max + 1);
+//         }
+
+//     }
+//     return array;
+// }
+
+// void ShowArray(int[,] array)
+// {
+
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+
+// }
+
+// int sumNum(int[,] array)
+// {
+
+//     int sum = 0;
+
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (i == j)
+//             {
+//                 sum += array[i, j];
+
+//         };
+//         }
+
+//     }
+//     return sum;
+// }
+
+// int[,] myArray = CreateRandomArray(3, 4, 1, 10);
+// ShowArray(myArray);
+// Console.WriteLine(sumNum(myArray));
+
