@@ -2131,18 +2131,41 @@
 // M=1; N=15 -> 120
 // M=4; N=8 -> 30
 
+// Console.Clear();
+
+// Console.Write("inpun m: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("inpun n: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine(PrintNumbers(m,n));
+
+// int PrintNumbers(int start, int end)
+// {
+//     if(start==end) return start;
+//     return (start+PrintNumbers(start+1, end));
+// }
+
+
+// Задача № 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+// m=2, n=3 ->A(m,n)=29
+
 Console.Clear();
 
 Console.Write("inpun m: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("inpun n: ");
 int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("inpun n: ");
+int m = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(PrintNumbers(m,n));
 
-int PrintNumbers(int start, int end)
+int PrintNumbers(int m, int n)
 {
-    if(start==end) return start;
-    return (start+PrintNumbers(start+1, end));
+    if (m == 0) return n + 1;
+    if (m > 0 && n == 0) return PrintNumbers(m - 1, 1);
+    if (m > 0 && n > 0) return PrintNumbers(m - 1, PrintNumbers(m, n - 1));
+    return PrintNumbers(m,n);
 }
 
+// Не совсем понял как это считается. И зщапутался с переменными, но это как раз от неопнимания как это считается.
+//  Но решение подсказали формумы... увы...
