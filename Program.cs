@@ -1089,20 +1089,42 @@
 // Задача № 43: Напишите программу, которая найдет точку пересечения двух прямых, заданных уравнениеями y=k1*x+b1, y=k2*x+b2;
 // значения b1, k1, b2 И k2 задаются пользователем.
 
-Console.Write("first number B1: ");
-int b1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("second number K1: ");
-int k1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("first number B2: ");
-int b2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("second number K2: ");
-int k2 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("first number B1: ");
+// int b1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("second number K1: ");
+// int k1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("first number B2: ");
+// int b2 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("second number K2: ");
+// int k2 = Convert.ToInt32(Console.ReadLine());
 
-int x = 0;
-int y =0;
+// int x = 0;
+// int y =0;
 
-x=(b2-b1)/(k1-k2);
-y=k1*x+b1;
+// x=(b2-b1)/(k1-k2);
+// y=k1*x+b1;
 
-Console.WriteLine($"ось х {x} ось y {y}");
+// Console.WriteLine($"ось х {x} ось y {y}");
 
+
+// Задача № _**_: перевести 10тичное число в двоичное число.
+
+int ConvertDecBin(int num){
+
+int BinNum = 0;
+int count = 0;
+while (num>= 1){
+
+    if (count == 0) count =1;
+    else count = count*10;
+    BinNum=BinNum + (num%2)*count;
+    num=num/2;
+}
+return BinNum;
+}
+
+Console.WriteLine ("введите число");
+int DecNum = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(DecNum + "->" + ConvertDecBin(DecNum));
+
+// Пришлось подглядеть(((.
